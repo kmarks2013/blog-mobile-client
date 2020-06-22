@@ -9,6 +9,7 @@ const Stack = createStackNavigator()
 
 export default function App() {
   return (
+    <BlogProvider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Index" >
         {/* <Stack.Screen
@@ -24,5 +25,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </BlogProvider>
   );
 }

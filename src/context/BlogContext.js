@@ -9,6 +9,10 @@ const blogReducer = (state, action) => {
         default:
             return state
     }
+}
+
+export const BlogProvider = ({children}) => {
+    const [blogPosts, dispatch] = useReducer(blogReducer, [])
 
 
 

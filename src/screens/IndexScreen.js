@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import BlogContext from '../context/BlogContext'
 
 const IndexScreen = () => {
-    const value = useContext(BlogContext)
+    const blogPosts = useContext(BlogContext)
     return (
         <View>
             <Text>Index Screen {value.number}</Text>

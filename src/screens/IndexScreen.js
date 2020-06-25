@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, FlatList } from 'react-native'
 import BlogContext from '../context/BlogContext'
 
 const IndexScreen = () => {

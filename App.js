@@ -12,12 +12,7 @@ export default function App() {
     <Provider>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Index" >
-        {/* <Stack.Screen
-          component={HomeScreen}
-          name="Home"
-          options={{title: "Blogs"}} */}
 
-        {/* /> */}
         <Stack.Screen
           component={IndexScreen}
           name="Index"

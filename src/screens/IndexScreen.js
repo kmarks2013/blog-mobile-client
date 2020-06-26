@@ -7,7 +7,6 @@ const IndexScreen = () => {
     const {state, addBlogPost, deleteBlogPost} = useContext(Context)
     return (
         <View>
-            <Text>Index Screen</Text>
             <Button title="Add Post" onPress={addBlogPost}/>
             <FlatList
                 data={state}

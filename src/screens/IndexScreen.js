@@ -12,12 +12,18 @@ const IndexScreen = ({navigation}) => {
                 data={state}
                 keyExtractor={(blogPosts)=> blogPosts.title}
                 renderItem={({item}) => {
-                    return <View style={styles.row}>
-                    <Text style={styles.title}>{item.title} - {item.id}</Text>
-                    <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-                        <Feather name='trash' style={styles.icon} />
-                    </TouchableOpacity>
-                    </View>
+                    return (
+                        <TouchableOpacity onPress={() => navigation.navigate('Blog', { id: item.id})}>
+                            <View style={styles.row}>
+                                <Text style={styles.title}>
+                                    {item.title} - {item.id}
+                                </Text>
+                                <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+                                    <Feather name='trash' style={styles.icon} />
+                                </TouchableOpacity>
+                            </View>
+                        </TouchableOpacity>
+                    )
                 }}
             />
 

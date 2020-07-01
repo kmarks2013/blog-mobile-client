@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import {useRoute} from '@react-navigation/native'
 import {Context} from '../context/BlogContext'
 
-const BlogScreen = ({route, navigation}) => {
+const BlogScreen = () => {
     const {state} = useContext(Context)
     const route = useRoute()
     const  id = route.params.id

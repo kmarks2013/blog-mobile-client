@@ -1,10 +1,13 @@
 import React, {useContext} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import {useRoute} from '@react-navigation/native'
 import {Context} from '../context/BlogContext'
 
 const BlogScreen = ({route, navigation}) => {
     const {state} = useContext(Context)
-    console.log(route.params.id)
+    const route = useRoute()
+    const  id = route.params.id
+    console.log("hello", id)
 
     const blogPost = state.find((blogPost) => {blogPost.id === route.params.id} )
 

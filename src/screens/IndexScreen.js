@@ -4,6 +4,17 @@ import {Context} from '../context/BlogContext'
 import { Feather } from '@expo/vector-icons';
 
 const IndexScreen = ({navigation}) => {
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate('New')}>
+                <Feather name="plus" size={30} style={styles.plus} />
+            </TouchableOpacity>
+          ),
+        });
+      }, [navigation]);
+
     const {state, addBlogPost, deleteBlogPost} = useContext(Context)
     return (
         <View>

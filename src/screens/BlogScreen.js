@@ -20,7 +20,7 @@ const BlogScreen = () => {
     })
     return (
         <View>
-            <Text>Blog Screen</Text>
+            <Text>{blogPost.title}</Text>
         </View>
     )
 }

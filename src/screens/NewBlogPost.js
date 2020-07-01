@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native'
 import {Context} from '../context/BlogContext'
 
 
-const NewBlogPost = () => {
+const NewBlogPost = ({navigation}) => {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const {addBlogPost} = useContext(Context)
@@ -16,7 +16,9 @@ const NewBlogPost = () => {
             <Text style={styles.label}>Add Content:</Text>
             <TextInput style={styles.input} value={content} onChangeText={(text) => setContent(text)}/>
             <Button title="Add Blog Post"
-                onPress={(() => addBlogPost(title,content))}
+                onPress={(() => addBlogPost(title,content, ()  => {
+                    navigation.navigate('Index')
+                }))}
             />
         </View>
     )

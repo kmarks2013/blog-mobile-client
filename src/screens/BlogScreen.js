@@ -1,8 +1,9 @@
 import React, {useContext} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import {Context} from '../context/BlogContext'
+import { EvilIcons } from '@expo/vector-icons'
 
-const BlogScreen = ({route}) => {
+const BlogScreen = ({route, navigation}) => {
     const {state} = useContext(Context)
     const  id = route.params.id
 
@@ -12,6 +13,16 @@ const BlogScreen = ({route}) => {
         } else {
             console.log('wrongid')
         }
+    })
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+        headerRight: () => (
+            <TouchableOpacity>
+                <EvilIcons name="pencil" size={35}/>
+            </TouchableOpacity>
+            )
+        })
     })
 
     return (

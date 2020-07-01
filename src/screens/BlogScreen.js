@@ -1,11 +1,9 @@
 import React, {useContext} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import {useRoute} from '@react-navigation/native'
 import {Context} from '../context/BlogContext'
 
-const BlogScreen = () => {
+const BlogScreen = ({route}) => {
     const {state} = useContext(Context)
-    const route = useRoute()
     const  id = route.params.id
     console.log("hello", id)
 
@@ -18,6 +16,9 @@ const BlogScreen = () => {
             console.log(' wrongid')
         }
     })
+
+    console.log(blogPost)
+
     return (
         <View>
             <Text>{blogPost.title}</Text>

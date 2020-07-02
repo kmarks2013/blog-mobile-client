@@ -26,9 +26,9 @@ const BlogScreen = ({route, navigation}) => {
     })
 
     return (
-        <View>
-            <Text>{blogPost.title}</Text>
-            <Text>{blogPost.content}</Text>
+        <View >
+            <Text  style={styles.post} >{blogPost.title}</Text>
+            <Text  style={styles.post}>{blogPost.content}</Text>
         </View>
     )
 }
@@ -39,4 +39,8 @@ const styles = StyleSheet.create({
     icon:{
         marginRight: 5
     },
+    post:{
+        fontSize: 20,
+        marginLeft: 5
+    }
 })

@@ -24,7 +24,7 @@ export default function App() {
         <Stack.Screen
           component={BlogScreen}
           name="Blog"
-          options={({ route }) => ({ title: route.params.id })}
+          options={({ route }) => ({ title: route.params.title })}
         />
         <Stack.Screen
           component={NewBlogPost}

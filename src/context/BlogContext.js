@@ -2,6 +2,8 @@ import createDataContext from './createDataContext'
 
 const blogReducer = (state, action) => {
     switch (action.type) {
+        case 'delete_blogpost':
+            return state.filter((blogPost) => blogPost.id !== action.payload)
         case 'add_blogpost':
             console.log(state)
             return [
@@ -12,8 +14,6 @@ const blogReducer = (state, action) => {
                     content: action.payload.content
                 }
             ]
-        case 'delete_blogpost':
-            return state.filter((blogPost) => blogPost.id !== action.payload)
         default:
             return state
     }

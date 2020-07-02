@@ -16,10 +16,19 @@ const EditScreen = ({route}) => {
     const [title, setTitle] = useState(blogPost.title)
     const [content, setContent] = useState(blogPost.content)
 
-const EditScreen = () => {
     return (
         <View>
-            <Text>Edit</Text>
+            <Text>Edit Title:</Text>
+            <TextInput
+                value={title}
+                onChangeText={(newTitle)=> setTitle(newTitle)}
+            />
+            <Text>Edit Content:</Text>
+            <TextInput
+                value={content}
+                onChangeText={(newContent)=> setContent(newContent)}
+            />
+
         </View>
     )
 }

@@ -7,7 +7,12 @@ const BlogPostForm = () => {
 
     return (
         <View>
-            <Text></Text>
+            <Text style={styles.label}>Enter Title:</Text>
+            <TextInput style={styles.input} value={title} onChangeText={(text) => setTitle(text)}/>
+            <Text style={styles.label}>Add Content:</Text>
+            <TextInput style={styles.input} value={content} onChangeText={(text) => setContent(text)}/>
+            <Button title="Submit Post"
+            />
         </View>
     )
 }

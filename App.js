@@ -34,7 +34,7 @@ export default function App() {
         <Stack.Screen
           component={EditScreen}
           name="Edit"
-          options={({route}) => ({title: `Edit ${route.params.blogPost.title}`})}
+          // options={({route}) => ({title: `Edit ${route.params.blogPost.title}`})}
         />
       </Stack.Navigator>
     </NavigationContainer>

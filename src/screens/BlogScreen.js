@@ -15,23 +15,32 @@ const BlogScreen = ({route, navigation}) => {
         }
     })
 
-    React.useLayoutEffect(() => {
+    React.useLayoutEffect((naviagation) => {
         navigation.setOptions({
         headerRight: () => (
-            <TouchableOpacity>
-                <EvilIcons name="pencil" size={35}/>
+            <TouchableOpacity onPress={() => {navigation.navigate('Edit', {id})}}>
+                <EvilIcons name="pencil" size={40} style={styles.icon}/>
             </TouchableOpacity>
             )
         })
     })
 
     return (
-        <View>
-            <Text>{blogPost.title}</Text>
+        <View >
+            <Text  style={styles.post} >{blogPost.title}</Text>
+            <Text  style={styles.post}>{blogPost.content}</Text>
         </View>
     )
 }
 
 export default BlogScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    icon:{
+        marginRight: 5
+    },
+    post:{
+        fontSize: 20,
+        marginLeft: 5
+    }
+})

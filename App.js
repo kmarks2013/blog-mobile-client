@@ -5,6 +5,7 @@ import IndexScreen from './src/screens/IndexScreen';
 import {Provider} from './src/context/BlogContext'
 import BlogScreen from './src/screens/BlogScreen';
 import NewBlogPost from './src/screens/NewBlogPost';
+import EditBlogScreen from './src/screens/EditBlogScreen';
 
 
 
@@ -23,12 +24,17 @@ export default function App() {
         <Stack.Screen
           component={BlogScreen}
           name="Blog"
-          options={({ route }) => ({ title: route.params.id })}
+          options={({ route }) => ({ title: route.params.title })}
         />
         <Stack.Screen
           component={NewBlogPost}
           name="New"
           options={{title:"Add Post"}}
+        />
+        <Stack.Screen
+          component={EditBlogScreen}
+          name="Edit"
+          // options={({route}) => ({title: `Edit ${route.params.blogPost.title}`})}
         />
       </Stack.Navigator>
     </NavigationContainer>

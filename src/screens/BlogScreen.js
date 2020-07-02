@@ -15,11 +15,11 @@ const BlogScreen = ({route, navigation}) => {
         }
     })
 
-    React.useLayoutEffect(() => {
+    React.useLayoutEffect((naviagation) => {
         navigation.setOptions({
         headerRight: () => (
-            <TouchableOpacity>
-                <EvilIcons name="pencil" size={35}/>
+            <TouchableOpacity onPress={() => {navigation.navigate('Edit', {blogPost})}}>
+                <EvilIcons name="pencil" size={40} style={styles.icon}/>
             </TouchableOpacity>
             )
         })

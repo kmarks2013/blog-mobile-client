@@ -14,9 +14,7 @@ const EditBlogScreen = ({route}) => {
         }
     })
 
-    return (
-        <BlogPostForm/>
-        )
+    return <BlogPostForm/>
 }
 
 export default EditBlogScreen

@@ -28,10 +28,15 @@ const BlogScreen = ({route, navigation}) => {
     return (
         <View>
             <Text>{blogPost.title}</Text>
+            <Text>{blogPost.content}</Text>
         </View>
     )
 }
 
 export default BlogScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    icon:{
+        marginRight: 5
+    },
+})

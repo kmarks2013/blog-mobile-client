@@ -4,10 +4,11 @@ import {Context} from '../context/BlogContext'
 import BlogPostForm from '../components/BlogPostForm'
 
 const EditBlogScreen = ({route}) => {
-    const {state} = useContext(Context)
+    const id = route.params.id
+    const {state, editBlogPost} = useContext(Context)
 
     const blogPost = state.find((post) =>{
-        if (post.id === route.params.id){
+        if (post.id === id){
             return post
         } else {
             console.log('wrongid')
@@ -16,7 +17,9 @@ const EditBlogScreen = ({route}) => {
 
     return <BlogPostForm
         initialValues={{ title: blogPost.title, content: blogPost.content }}
-        onSubmit={(title, content) => console.log(title, content)}/>
+        onSubmit={(title, content) => {
+            editBlogPost(id, title, content)
+        }}/>
 }
 
 export default EditBlogScreen

@@ -6,7 +6,7 @@ import { EvilIcons } from '@expo/vector-icons'
 const BlogScreen = ({route, navigation}) => {
     const {state} = useContext(Context)
     const  id = route.params.id
-
+    console.log(route)
     const blogPost = state.find((post) =>{
         if (post.id === id){
             return post

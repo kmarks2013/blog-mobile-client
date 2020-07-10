@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, FlatList, Button, TouchableOpacity } from 'reac
 import {Context} from '../context/BlogContext'
 import { Feather } from '@expo/vector-icons';
 
-const IndexScreen = ({navigation}) => {
+const IndexScreen = ({navigation, route}) => {
 
     React.useLayoutEffect(() => {
         navigation.setOptions({
@@ -14,6 +14,7 @@ const IndexScreen = ({navigation}) => {
           ),
         });
       }, [navigation]);
+
 
     const {state, addBlogPost, deleteBlogPost} = useContext(Context)
     return (
